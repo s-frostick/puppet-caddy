@@ -10,7 +10,7 @@ class caddy::package inherits caddy {
   }
 
   $caddy_url    = 'https://caddyserver.com/download/linux'
-  $caddy_dl_url = "${caddy_url}/${$caddy::params::arch}?plugins=${caddy::caddy_features}"
+  $caddy_dl_url = "${caddy_url}/${$caddy::params::arch}?plugins=${caddy::caddy_features}?license=${caddy::caddy_license}"
   $caddy_dl_dir = "${caddy::params::caddy_tmp_dir}/caddy_linux_${$caddy::params::arch}_custom.tar.gz"
 
   exec { 'install caddy':

@@ -5,6 +5,8 @@
 #
 class caddy::params {
 
+  $caddy_license = 'personal'
+
   case $::architecture {
     'x86_64': { $arch = 'amd64'}
     'x86'   : { $arch = '386' }
