@@ -34,7 +34,7 @@ class caddy (
   $caddy_log_dir     = $caddy::params::caddy_log_dir,
   $caddy_tmp_dir     = $caddy::params::caddy_tmp_dir,
   $caddy_features    = 'http.filter,http.git,http.ipfilter',
-  $caddy_license     = $caddy:params::caddy_license
+  $caddy_license     = $caddy::params::caddy_license
 
   )inherits caddy::params{
 
