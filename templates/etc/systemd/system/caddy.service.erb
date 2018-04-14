@@ -9,7 +9,7 @@ Wants=network-online.target systemd-networkd-wait-online.service
 User=<%= @caddy_user %>
 Group=<%= @caddy_group %>
 
-Environment=HOME=/etc/ssl/caddy
+Environment=HOME=<%= @caddy_user_home %>
 
 ExecStart=<%= @install_path %>/caddy -log <%= @caddy_log_dir %>/caddy.log -agree=true -conf=/etc/caddy/Caddyfile -root=/var/tmp
 ExecReload=/bin/kill -USR1 $MAINPID
@@ -21,7 +21,7 @@ PrivateTmp=true
 PrivateDevices=true
 ProtectHome=true
 ProtectSystem=full
-ReadWriteDirectories=/etc/ssl/caddy
+ReadWriteDirectories=<%= @caddy_user_home %>
 
 [Install]
 WantedBy=multi-user.target

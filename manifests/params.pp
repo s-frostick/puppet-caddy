@@ -6,6 +6,7 @@
 class caddy::params {
 
   $caddy_license = 'personal'
+  $caddy_user_home = '/etc/ssl/caddy'
 
   case $::architecture {
     'x86_64': { $arch = 'amd64'}

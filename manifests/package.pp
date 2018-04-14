@@ -31,10 +31,10 @@ class caddy::package inherits caddy {
     require => Exec['extract caddy'],
   }
 
-  exec { "allow caddy bind port 80/443":
+  exec { 'set cap caddy':
     command => "setcap cap_net_bind_service=+ep ${caddy::install_path}/caddy",
     path => "/usr/sbin:/sbin",
-    require => File["${caddy::install_path}/caddy"]
+    require => File["${caddy::install_path}/caddy"],
   }
 
 }

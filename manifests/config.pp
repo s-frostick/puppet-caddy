@@ -15,7 +15,7 @@ class caddy::config inherits caddy {
     shell      => '/sbin/nologin',
     gid        => $caddy::caddy_group,
     system     => true,
-    home       => '/etc/ssl/caddy',
+    home       => $::caddy::caddy_user_home,
     managehome => true,
   }
 
